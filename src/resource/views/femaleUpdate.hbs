@@ -1,0 +1,62 @@
+<section class="table__body" id="profile" style="background-image: url(https://res.cloudinary.com/dvapewbfh/image/upload/v1706085562/images/x772kkrm0xq0aa9m4ebu.jpg);">
+    <h1>Male Ranks</h1>
+    <table id="male">
+        <thead>
+            <tr>
+                <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                <th> Player <span class="icon-arrow">&UpArrow;</span></th>
+                <th> Win <span class="icon-arrow">&UpArrow;</span></th>
+                <th> Lose <span class="icon-arrow">&UpArrow;</span></th>
+                <th> SD <span class="icon-arrow">&UpArrow;</span></th>
+                <th> W15 <span class="icon-arrow">&UpArrow;</span></th>
+                <th> L15 <span class="icon-arrow">&UpArrow;</span></th>
+                <th> Point <span class="icon-arrow">&UpArrow;</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each females}}
+            <tr>
+                <td>{{@index}}</td>
+                <td class="imgCell"><img src="{{Img}}" alt="">{{Name}}</td>
+                <td>
+                    <div class="child">
+                        <button class="win" onclick="update(this, -1)">-</button>
+                        <div class="winValue">{{Win}}</div>
+                        <button class="win" onclick="update(this, 1)">+</button>
+                    </div>
+                </td>
+                <td>
+                    <div class="child">
+                        <button class="lose" onclick="update(this, -1)">-</button>
+                        <div class="loseValue">{{Lose}}</div>
+                        <button class="lose" onclick="update(this, 1)">+</button>
+                    </div>
+                </td>
+                <td>
+                    <div class="sdValue">{{SD}}</div>
+                </td>
+                <td>
+                    <div class="child">
+                        <button class="w15" onclick="update(this, -1)">-</button>
+                        <div class="w15Value">{{W15}}</div>
+                        <button class="w15" onclick="update(this, 1)">+</button>
+                    </div>
+                </td>
+                <td>
+                    <div class="child">
+                        <button class="l15" onclick="update(this, -1)">-</button>
+                        <div class="l15Value">{{L15}}</div>
+                        <button class="l15" onclick="update(this, 1)">+</button>
+                    </div>
+                </td>
+                <td>
+                    <div class="ptsValue">{{PTS}}</div>
+                </td>
+            </tr>
+            {{/each}}
+
+        </tbody>
+    </table>
+    <button onclick="doneUpdate()" class="update" id="females">Done</button>
+</section>
+<!-- END: abpxx6d04wxr -->

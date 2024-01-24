@@ -1,0 +1,92 @@
+<section id="main" style="background-image: url(https://res.cloudinary.com/dvapewbfh/image/upload/v1706087790/images/cf3bu8rirbpodpuimuzc.jpg);">
+    <h1>Neverland</h1>
+</section>
+<section class="table__body" id="profile" style="background-image: url(https://res.cloudinary.com/dvapewbfh/image/upload/v1706085528/images/qyz5z5bfszjgq2u1breo.jpg);">
+    <h1>Male Ranks</h1>
+    <table id="male">
+        <thead>
+            <tr>
+                <th> Id <span class="icon-arrow">&DownArrow;</span></th>
+                <th> Player <span class="icon-arrow">&DownArrow;</span></th>
+                <th> Win <span class="icon-arrow">&DownArrow;</span></th>
+                <th> Lose <span class="icon-arrow">&DownArrow;</span></th>
+                <th> SD <span class="icon-arrow">&DownArrow;</span></th>
+                <th> W15 <span class="icon-arrow">&DownArrow;</span></th>
+                <th> L15 <span class="icon-arrow">&DownArrow;</span></th>
+                <th> Point <span class="icon-arrow">&DownArrow;</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each males}}
+            <tr>
+                <td>{{@index}}</td>
+                <td><img src="{{Img}}" alt="">{{Name}}</td>
+                <td>{{Win}}</button></td>
+                <td>{{Lose}}</button></td>
+                <td>{{SD}}</td>
+                <td>{{W15}}</button></td>
+                <td>{{L15}}</button></td>
+                <td>{{PTS}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <form action="/update/male" method="get"><button class="update" id="males">Updates</button></form>
+</section>
+<!-- END: abpxx6d04wxr -->
+
+<!-- BEGIN: be15d9bcejpp -->
+<section class="table__body" id="social" style="background-image: url(https://res.cloudinary.com/dvapewbfh/image/upload/v1706085562/images/x772kkrm0xq0aa9m4ebu.jpg);">
+    <h1>Female Ranks</h1>
+    <table id="female">
+        <thead>
+            <tr>
+                <th> Id <span class="icon-arrow">&DownArrow;</span></th>
+                <th> Player <span class="icon-arrow">&DownArrow;</span></th>
+                <th> Win <span class="icon-arrow">&DownArrow;</span></th>
+                <th> Lose <span class="icon-arrow">&DownArrow;</span></th>
+                <th> SD <span class="icon-arrow">&DownArrow;</span></th>
+                <th> W15 <span class="icon-arrow">&DownArrow;</span></th>
+                <th> L15 <span class="icon-arrow">&DownArrow;</span></th>
+                <th> Point <span class="icon-arrow">&DownArrow;</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each females}}
+            <tr>
+                <td>{{@index}}</td>
+                <td><img src="{{Img}}" alt="">{{Name}}</td>
+                <td>{{Win}}</button></td>
+                <td>{{Lose}}</button></td>
+                <td>{{SD}}</td>
+                <td>{{W15}}</button></td>
+                <td>{{L15}}</button></td>
+                <td>{{PTS}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <form action="/update/female" method="get"><button class="update" id="females">Updates</button></form>
+</section>
+<section id="about" style="background-image: url(https://res.cloudinary.com/dvapewbfh/image/upload/v1706085599/images/ls2lz9cahewvtvjs43bb.jpg);">
+    <h1>Create Member</h1>
+    <form action="/member/create" method="POST" enctype="multipart/form-data">
+        <input type="text" id="name" name="Name" placeholder="Name">
+        <input type="text" id="p" name="Played" placeholder="Played">
+        <input type="text" id="w" name="Win" placeholder="Win">
+        <input type="text" id="l" name="Lose" placeholder="Lose">
+        <input type="text" id="sd" name="SD" placeholder="SD">
+        <input type="text" id="w15" name="W15" placeholder="Win up 15">
+        <input type="text" id="l15" name="L15" placeholder="Lose down 15">
+        <select id="Gender" name="gender">
+            <option value="other">Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <div>
+            <label for="img">Select image:</label>
+            <input type="file" id="img" name="Img">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</section>
