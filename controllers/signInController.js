@@ -9,27 +9,19 @@ exports.signIn = async (req, res) => {
         const isTaken = await User.findOne({
             "UserName": user.UserName
         });
-                if (!isTaken) {
-                    res.status(200).json({
-                        status: "fail",
-                        msg: "Account not found",
-                    });
-                }
-                bcrypt.compare(user.Password, isTaken.Password, async function (err, result) {
-                    if (result) {
-                        const [malesData, femalesData] = await Promise.all([Male.find(), Female.find()]);
-                        const males = malesData.map(male => ({ ...male.toObject(), PTS: male.Win + male.W15 * 2 }));
-                        const females = femalesData.map(female => ({ ...female.toObject(), PTS: female.Win + female.W15 * 2 }));
-                        males.sort((a, b) => b.PTS - a.PTS); // Sắp xếp lại mảng females theo trường PTS giảm dần
-                        females.sort((a, b) => b.PTS - a.PTS); // Sắp xếp lại mảng females theo trường PTS giảm dần
-                        res.redirect('/home');
-                    } else {
-                        res.status(200).json({
-                            status: "fail",
-                            msg: "Wrong password",
-                        });
-                    }
+        if (!isTaken) {
+            res.redirect('/login');
+        }
+        bcrypt.compare(user.Password, isTaken.Password, async function (err, result) {
+            if (result) {
+                res.redirect('/home');
+            } else {
+                res.status(200).json({
+                    status: "fail",
+                    msg: "Wrong password",
                 });
+            }
+        });
 
     } catch (err) {
         res.status(400).json({

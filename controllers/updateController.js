@@ -73,5 +73,43 @@ exports.doneUpdate = async (req, res) => {
     }
 }
 
+exports.deleteMember = async (req, res) => {
+    try {
+        const gender = req.body.id;
+        const memberName = req.body.name;
+        console.log(req.body)
+        if (gender === 'females') {
+            const female = await Female.findOne({ Name: memberName });
 
+            if (female) {
+                await female.remove(); // or female.deleteOne();
+                return res.status(200).json({
+                    status: 'success',
+                    msg: 'Xóa thành viên thành công, bấm vào logo để quay lại trang chủ'
+                });
+            }
+        }
+        else if (gender === 'males') {
+            const male = await Male.findOne({ Name: memberName });
+
+            if (male) {
+                await male.deleteOne(); // or female.deleteOne();
+                return res.status(200).json({
+                    status: 'success',
+                    msg: 'Xóa thành viên thành công, bấm vào logo để quay lại trang chủ'
+                });
+            }
+        } else {
+            return res.status(200).json({
+                status: 'fail',
+                msg: 'Không hỗ trợ giới tính khác'
+            });
+        }
+    } catch (error) {
+        return res.status(200).json({
+            status: 'fail',
+            msg: error.message
+        });
+    }
+};
 

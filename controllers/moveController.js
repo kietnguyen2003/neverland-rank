@@ -1,6 +1,10 @@
 const Male = require('../models/Male.js')
 const Female = require('../models/Female.js')
 
+exports.getLogin = async (req, res) => {
+    res.render('index')
+}
+
 
 exports.getHome = async (req, res) => {
     const [malesData, femalesData] = await Promise.all([Male.find(), Female.find()]);

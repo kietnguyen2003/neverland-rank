@@ -1,4 +1,26 @@
-<section class="table__body" id="profile" style="background-image: url(https://res.cloudinary.com/dvapewbfh/image/upload/v1706085562/images/x772kkrm0xq0aa9m4ebu.jpg);">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<style>
+    .deleteMember {
+        font-size: 1.7rem;
+        cursor: pointer;
+    }
+
+    .deleteMember:hover {
+        font-size: 1.7rem;
+        cursor: pointer;
+        color: red;
+        transition: all 0.3s ease-in-out;
+    }
+
+    td.imgCell {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+</style>
+
+<section class="table__body" id="profile"
+    style="background-image: url(https://res.cloudinary.com/dvapewbfh/image/upload/v1706085562/images/x772kkrm0xq0aa9m4ebu.jpg);">
     <h1>Male Ranks</h1>
     <table id="male">
         <thead>
@@ -11,13 +33,17 @@
                 <th> W15 <span class="icon-arrow">&UpArrow;</span></th>
                 <th> L15 <span class="icon-arrow">&UpArrow;</span></th>
                 <th> Point <span class="icon-arrow">&UpArrow;</span></th>
+                <th> Delete <span class="icon-arrow">&UpArrow;</span></th>
             </tr>
         </thead>
         <tbody>
             {{#each females}}
             <tr>
                 <td>{{@index}}</td>
-                <td class="imgCell"><img src="{{Img}}" alt="">{{Name}}</td>
+                <td class="imgCell">
+                    <img src="{{Img}}" alt="">
+                    <div class="name">{{Name}}</div>
+                </td>
                 <td>
                     <div class="child">
                         <button class="win" onclick="update(this, -1)">-</button>
@@ -52,6 +78,11 @@
                 <td>
                     <div class="ptsValue">{{PTS}}</div>
                 </td>
+                <td>
+                    <div class="deleteMember" id="females" onclick="deleteMemberHandle(this)">
+                        <i class='bx bxs-message-square-x'></i>
+                    </div>
+                </td>
             </tr>
             {{/each}}
 
@@ -60,3 +91,5 @@
     <button onclick="doneUpdate()" class="update" id="females">Done</button>
 </section>
 <!-- END: abpxx6d04wxr -->
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="/JS/delete.js"></script>

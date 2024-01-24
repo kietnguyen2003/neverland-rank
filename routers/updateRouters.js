@@ -12,8 +12,8 @@ router
 router
     .route('/done')
     .post(updateController.doneUpdate)
-// router
-//     .route('/delete')
-//     .post(updateController.deleteMemeber)
+router
+    .route('/delete')
+    .post(updateController.deleteMember)
 
 module.exports = router;
