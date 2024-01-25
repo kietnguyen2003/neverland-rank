@@ -1,0 +1,17 @@
+.deleteMember {
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.deleteMember:hover {
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: red;
+    transition: all 0.3s ease-in-out;
+}
+
+td.imgCell {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}

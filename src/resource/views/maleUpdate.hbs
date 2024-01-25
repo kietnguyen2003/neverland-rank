@@ -1,24 +1,4 @@
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-<style>
-    .deleteMember {
-        font-size: 1.7rem;
-        cursor: pointer;
-    }
-
-    .deleteMember:hover {
-        font-size: 1.7rem;
-        cursor: pointer;
-        color: red;
-        transition: all 0.3s ease-in-out;
-    }
-
-    td.imgCell {
-        display: flex;
-        justify-content: left;
-        align-items: center;
-    }
-</style>
+<link rel="stylesheet" href="/css/delete.css">
 
 <section class="table__body" id="profile"
     style="background-image: url(https://res.cloudinary.com/dvapewbfh/image/upload/v1706085528/images/qyz5z5bfszjgq2u1breo.jpg);">
@@ -42,7 +22,9 @@
             {{#each males}}
             <tr>
                 <td>{{@index}}</td>
-                <td class="imgCell"><img src="{{Img}}" alt=""><div class="name">{{Name}}</div></td>
+                <td class="imgCell"><img src="{{Img}}" alt="">
+                    <div class="name">{{Name}}</div>
+                </td>
                 <td>
                     <div class="child">
                         <button class="win" onclick="update(this, -1)">-</button>
@@ -90,5 +72,4 @@
     <button onclick="doneUpdate()" class="update" id="males">Done</button>
 </section>
 <!-- END: abpxx6d04wxr -->
-<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 <script src="/JS/delete.js"></script>
