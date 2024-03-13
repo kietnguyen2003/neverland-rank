@@ -1,11 +1,13 @@
-const container = document.getElementById('container');
-const registerBtn = document.getElementById('register');
-const loginBtn = document.getElementById('login');
+$(document).ready(function() {
+    const container = $('#container');
+    const registerBtn = $('#register');
+    const loginBtn = $('#login');
 
-registerBtn.addEventListener('click', () => {
-    container.classList.add("active");
-});
+    registerBtn.click(function() {
+        container.addClass("active");
+    });
 
-loginBtn.addEventListener('click', () => {
-    container.classList.remove("active");
+    loginBtn.click(function() {
+        container.removeClass("active");
+    });
 });

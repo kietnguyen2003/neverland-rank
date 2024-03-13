@@ -103,18 +103,44 @@ function doneUpdate() {
     xhr.send(jsonData);
 }
 
-function deletePlayer(name){
-    const player = {
-        Name: name,
-        gender: event.target.id
-    }
+function reset() {
+    const data = [];
 
-    const jsonData = JSON.stringify(player);
+    // Lặp qua từng hàng trong bảng males
+    $('#male tbody tr').each(function () {
+        const row = $(this);
+        const index = row.find('td:eq(0)').text();
+        const img = row.find('.imgCell img').attr('src');
+        const name = row.find('.imgCell').text().replace(index, '').trim();
 
+        const playerData = {
+            Img: img,
+            Name: name,
+            Win: 0,
+            Lose: 0,
+            SD: 0,
+            W15: 0,
+            L15: 0
+        };
+        data.push(playerData);
+    });
+
+    const className = event.target.id;
+
+    // Tạo một đối tượng chứa cả jsonData và jsonDataGender
+    const requestData = {
+        data: data,
+        gender: className
+    };
+
+    // Convert requestData to JSON string
+    const jsonData = JSON.stringify(requestData);
+
+    // Create a new XMLHttpRequest object
     const xhr = new XMLHttpRequest();
 
     // Set the request method and URL
-    xhr.open('POST', 'http://localhost:3000/update/delete', true);
+    xhr.open('POST', 'http://localhost:3000/update/done', true);
 
     // Set the request header
     xhr.setRequestHeader('Content-Type', 'application/json');

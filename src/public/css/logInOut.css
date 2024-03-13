@@ -7,6 +7,10 @@ body {
     height: 100vh;
 }
 
+header{
+    display: none;
+}
+
 .container {
     background-color: var(--color-bg-one);
     border-radius: 30px;

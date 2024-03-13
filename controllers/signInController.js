@@ -9,8 +9,9 @@ exports.signIn = async (req, res) => {
         const isTaken = await User.findOne({
             "UserName": user.UserName
         });
+        console.log(isTaken)
         if (!isTaken) {
-            res.redirect('/login');
+            res.redirect('/');
         }
         bcrypt.compare(user.Password, isTaken.Password, async function (err, result) {
             if (result) {
@@ -58,9 +59,7 @@ exports.createUser = async (req, res) => {
             });
         })
 
-        res.status(200).json({
-            status: 'success'
-        })
+        res.redirect('/login');
     } catch (err) {
         res.status(400).json({
             status: "fail",
