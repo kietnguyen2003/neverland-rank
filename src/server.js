@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 dotenv.config({path: './config.env'});
 const app = require('./app.js')
 const db = require('./config/index.js');
-const port = process.env.PORT || 3000;
+const port = 3000;
 // Connect to db
 db.connect();
 
