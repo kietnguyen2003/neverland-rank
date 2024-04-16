@@ -4,7 +4,7 @@
     <h1>Neverland</h1>
 </section>
 <section class="table__body" id="male"
-    style="background-image: url(https://res.cloudinary.com/dvapewbfh/image/upload/v1706085528/images/qyz5z5bfszjgq2u1breo.jpg);">
+    style="background-image: url(https://res.cloudinary.com/dvapewbfh/image/upload/v1713248787/images/male_wfia5i.jpg);">
     <h1>Male Ranks</h1>
     <table id="male">
         <thead>
@@ -22,7 +22,7 @@
         <tbody>
             {{#each males}}
             <tr>
-                <td>{{@index}}</td>
+                <td>{{addOne @index}}</td>
                 <td><img src="{{Img}}" alt="">{{Name}}</td>
                 <td>{{Win}}</button></td>
                 <td>{{Lose}}</button></td>
@@ -40,7 +40,7 @@
 
 <!-- BEGIN: be15d9bcejpp -->
 <section class="table__body" id="female"
-    style="background-image: url(https://res.cloudinary.com/dvapewbfh/image/upload/v1706085562/images/x772kkrm0xq0aa9m4ebu.jpg);">
+    style="background-image: url(https://res.cloudinary.com/dvapewbfh/image/upload/v1713248787/images/female_vm14tv.jpg);">
     <h1>Female Ranks</h1>
     <table id="female">
         <thead>
@@ -58,7 +58,7 @@
         <tbody>
             {{#each females}}
             <tr>
-                <td>{{@index}}</td>
+                <td>{{addOne @index}}</td>
                 <td><img src="{{Img}}" alt="">{{Name}}</td>
                 <td>{{Win}}</button></td>
                 <td>{{Lose}}</button></td>
@@ -95,3 +95,5 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </section>
+
+<script src="script.js"></script>

@@ -1,5 +1,6 @@
 const Male = require('../models/Male')
 const Female = require('../models/Female')
+const cloudinary = require('cloudinary');
 
 exports.updateMalePage = async (req, res) => {
     try {
@@ -78,22 +79,24 @@ exports.deleteMember = async (req, res) => {
         const gender = req.body.id;
         const memberName = req.body.name;
         console.log(req.body)
-        if (gender === 'females') {
+        if (gender == 'females') {
             const female = await Female.findOne({ Name: memberName });
-
             if (female) {
-                await female.remove(); // or female.deleteOne();
+                await female.deleteOne(); // or female.deleteOne();
+                // Xóa Img trên cloundinary
+                await cloudinary.uploader.destroy(female.Img);
                 return res.status(200).json({
                     status: 'success',
                     msg: 'Xóa thành viên thành công, bấm vào logo để quay lại trang chủ'
                 });
             }
         }
-        else if (gender === 'males') {
+        else if (gender == 'males') {
             const male = await Male.findOne({ Name: memberName });
 
             if (male) {
                 await male.deleteOne(); // or female.deleteOne();
+                await cloudinary.uploader.destroy(male.Img);
                 return res.status(200).json({
                     status: 'success',
                     msg: 'Xóa thành viên thành công, bấm vào logo để quay lại trang chủ'

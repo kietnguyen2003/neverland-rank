@@ -158,3 +158,4 @@ function reset() {
     // Send the request with the JSON data
     xhr.send(jsonData);
 }
+

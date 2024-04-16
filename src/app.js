@@ -2,6 +2,20 @@ const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
 const path = require('path');
+// Create an instance of the Handlebars engine with the helper
+const hbs = exphbs.create({
+    extname: 'hbs',
+    helpers: {
+        addOne: function(value) {
+            return value + 1;
+        }
+    }
+});
+
+// Engine template
+app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'resource/views'));
 
 // Static file
 app.use(express.static(path.join(__dirname, 'public')));
@@ -14,9 +28,5 @@ app.use((req, res, next) => {
     next();
 });
 
-// Engine template
-app.engine('hbs', exphbs.engine({ extname: 'hbs' }));
-app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'resource/views'));
 
 module.exports = app;
