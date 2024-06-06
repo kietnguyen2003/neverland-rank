@@ -7,7 +7,7 @@ const port = 3000;
 db.connect();
 
 
-app.get('/', async (req, res) => {
+app.get('neverland-rank.vercel.app/', async (req, res) => {
     res.render('index')
 });
 

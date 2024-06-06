@@ -8,8 +8,20 @@
   ],
   "routes": [
     {
+      "src": "/login",
+      "dest": "/src/server.js"
+    },
+    {
+      "src": "/member",
+      "dest": "/src/server.js"
+    },
+    {
+      "src": "/update",
+      "dest": "/src/server.js"
+    },
+    {
       "src": "/(.*)",
-      "dest": "./src/server.js"
+      "dest": "/src/server.js"
     }
   ]
 }

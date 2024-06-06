@@ -17,7 +17,7 @@ function deleteMemberHandle(a) {
         const jsonData = JSON.stringify(requestData);
 
         // Set the request method and URL
-        xhr.open('POST', 'http://localhost:3000/update/delete', true);
+        xhr.open('POST', 'neverland-rank.vercel.app/update/delete', true);
 
         // Set the request header
         xhr.setRequestHeader('Content-Type', 'application/json');
