@@ -5,8 +5,22 @@ exports.createMember = async (req, res) => {
     try {
         const fileData = req.file;
         const member = req.body;
+        if(!fileData){
+            return res.status(400).json({
+                status: 'fail',
+                msg: 'Please choose your Avatar'
+            });
+        }
         member.Img = fileData.path;
+        member.fielName = fileData.filename;
         let createdMember;
+
+        if(!member.gender){
+            return res.status(400).json({
+                status: 'fail',
+                msg: 'Please choose your gender'
+            });
+        }
 
         if (member.gender == 'male') {
             createdMember = await Male.create(member);

@@ -33,6 +33,10 @@ const FemalesSchema = new Schema({
     Img:{
         type: String,
         default: ''
+    },
+    isDeleted:{
+        type: Boolean,
+        default: false
     }
 })
 const Female = mongoose.model('Female', FemalesSchema);
