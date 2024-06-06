@@ -8,6 +8,9 @@ const hbs = exphbs.create({
     helpers: {
         addOne: function(value) {
             return value + 1;
+        },
+        sum: function(a, b, c) {
+            return a + b + c;
         }
     }
 });

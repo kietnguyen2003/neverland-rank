@@ -9,14 +9,15 @@
     <table id="male">
         <thead>
             <tr>
-                <th> Id <span class="icon-arrow">&DownArrow;</span></th>
-                <th> Player <span class="icon-arrow">&DownArrow;</span></th>
-                <th> Win <span class="icon-arrow">&DownArrow;</span></th>
-                <th> Lose <span class="icon-arrow">&DownArrow;</span></th>
-                <th> SD <span class="icon-arrow">&DownArrow;</span></th>
-                <th> W15 <span class="icon-arrow">&DownArrow;</span></th>
-                <th> L15 <span class="icon-arrow">&DownArrow;</span></th>
-                <th> Point <span class="icon-arrow">&DownArrow;</span></th>
+                <th> No. </th>
+                <th> Player </th>
+                <th> P </th>
+                <th> Win </th>
+                <th> Lose </th>
+                <th> SD </th>
+                <th> W15 </th>
+                <th> L15 </th>
+                <th> Point </th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,10 @@
             <tr>
                 <td>{{addOne @index}}</td>
                 <td><img src="{{Img}}" alt="">{{Name}}</td>
+                <td>
+                    <div class="PValue">{{sum Win Lose W15}}</div>
+
+                </td>
                 <td>{{Win}}</button></td>
                 <td>{{Lose}}</button></td>
                 <td>{{SD}}</td>
@@ -45,14 +50,15 @@
     <table id="female">
         <thead>
             <tr>
-                <th> Id <span class="icon-arrow">&DownArrow;</span></th>
-                <th> Player <span class="icon-arrow">&DownArrow;</span></th>
-                <th> Win <span class="icon-arrow">&DownArrow;</span></th>
-                <th> Lose <span class="icon-arrow">&DownArrow;</span></th>
-                <th> SD <span class="icon-arrow">&DownArrow;</span></th>
-                <th> W15 <span class="icon-arrow">&DownArrow;</span></th>
-                <th> L15 <span class="icon-arrow">&DownArrow;</span></th>
-                <th> Point <span class="icon-arrow">&DownArrow;</span></th>
+                <th> No. </th>
+                <th> Player </th>
+                <th> P </th>
+                <th> Win </th>
+                <th> Lose </th>
+                <th> SD </th>
+                <th> W15 </th>
+                <th> L15 </th>
+                <th> Point </th>
             </tr>
         </thead>
         <tbody>
@@ -60,6 +66,10 @@
             <tr>
                 <td>{{addOne @index}}</td>
                 <td><img src="{{Img}}" alt="">{{Name}}</td>
+                <td>
+                    <div class="PValue">{{sum Win Lose W15}}</div>
+
+                </td>
                 <td>{{Win}}</button></td>
                 <td>{{Lose}}</button></td>
                 <td>{{SD}}</td>
@@ -77,12 +87,12 @@
     <h1>Create Member</h1>
     <form action="/member/create" method="POST" enctype="multipart/form-data">
         <input type="text" id="name" name="Name" placeholder="Name">
-        <input type="text" id="p" name="Played" placeholder="Played">
-        <input type="text" id="w" name="Win" placeholder="Win">
-        <input type="text" id="l" name="Lose" placeholder="Lose">
-        <input type="text" id="sd" name="SD" placeholder="SD">
-        <input type="text" id="w15" name="W15" placeholder="Win up 15">
-        <input type="text" id="l15" name="L15" placeholder="Lose down 15">
+        {{!-- <input type="text" id="p" name="Played" placeholder="Played (current value: 0)">
+        <input type="text" id="w" name="Win" placeholder="Win (current value: 0)">
+        <input type="text" id="l" name="Lose" placeholder="Lose (current value: 0)">
+        <input type="text" id="sd" name="SD" placeholder="SD (current value: 0)">
+        <input type="text" id="w15" name="W15" placeholder="Win up 15 (current value: 0)">
+        <input type="text" id="l15" name="L15" placeholder="Lose down 15 (current value: 0)"> --}}
         <select id="Gender" name="gender">
             <option value="other">Gender</option>
             <option value="male">Male</option>

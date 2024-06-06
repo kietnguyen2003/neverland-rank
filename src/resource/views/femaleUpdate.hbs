@@ -2,20 +2,21 @@
 <link rel="stylesheet" href="/css/table.css">
 
 <section class="table__body" id="profile"
-    style="background-image: url(https://asset.cloudinary.com/dvapewbfh/99307c2320e827cc609c87678ac24cb5);">
+    style="background-image: url(https://res.cloudinary.com/dvapewbfh/image/upload/v1713248787/images/female_vm14tv.jpg);">
     <h1>Female Ranks</h1>
     <table id="male">
         <thead>
             <tr>
-                <th> Id <span class="icon-arrow">&UpArrow;</span></th>
-                <th> Player <span class="icon-arrow">&UpArrow;</span></th>
-                <th> Win <span class="icon-arrow">&UpArrow;</span></th>
-                <th> Lose <span class="icon-arrow">&UpArrow;</span></th>
-                <th> SD <span class="icon-arrow">&UpArrow;</span></th>
-                <th> W15 <span class="icon-arrow">&UpArrow;</span></th>
-                <th> L15 <span class="icon-arrow">&UpArrow;</span></th>
-                <th> Point <span class="icon-arrow">&UpArrow;</span></th>
-                <th> Delete <span class="icon-arrow">&UpArrow;</span></th>
+                <th> No. </th>
+                <th> Player </th>
+                <th> P </th>
+                <th> Win </th>
+                <th> Lose </th>
+                <th> SD </th>
+                <th> W15 </th>
+                <th> L15 </th>
+                <th> Point </th>
+                <th> Delete </th>
             </tr>
         </thead>
         <tbody>
@@ -25,6 +26,9 @@
                 <td class="imgCell">
                     <img src="{{Img}}" alt="">
                     <div class="name">{{Name}}</div>
+                </td>
+                <td>
+                    <div class="PValue">{{sum Win Lose W15}}</div>
                 </td>
                 <td>
                     <div class="child">
