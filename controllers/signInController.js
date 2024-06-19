@@ -1,5 +1,3 @@
-const Male = require('../models/Male')
-const Female = require('../models/Female')
 const User = require('../models/User')
 const bcrypt = require('bcryptjs');
 
@@ -30,6 +28,8 @@ exports.signIn = async (req, res) => {
         })
     }
 }
+
+
 
 exports.createUser = async (req, res) => {
     try {
