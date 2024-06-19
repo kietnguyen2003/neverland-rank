@@ -10,16 +10,15 @@ exports.signIn = async (req, res) => {
         if (!isTaken) {
             res.redirect('/');
         }
-        bcrypt.compare(user.Password, isTaken.Password, async function (err, result) {
-            if (result) {
-                res.redirect('/home');
-            } else {
-                res.status(200).json({
-                    status: "fail",
-                    msg: "Wrong password",
-                });
-            }
-        });
+        const isPasswordCorrect = await bcrypt.compare(user.Password, isTaken.Password);
+        if (isPasswordCorrect) {
+            res.redirect('/home');
+        } else {
+            res.status(200).json({
+            status: "fail",
+            msg: "Wrong password",
+            });
+        }
 
     } catch (err) {
         res.status(400).json({
