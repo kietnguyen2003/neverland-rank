@@ -84,7 +84,7 @@ function doneUpdate() {
     const xhr = new XMLHttpRequest();
 
     // Set the request method and URL
-    xhr.open('POST', 'neverland-rank.vercel.app/update/done', true);
+    xhr.open('POST', 'http://localhost:3000/update/done', true);
 
     // Set the request header
     xhr.setRequestHeader('Content-Type', 'application/json');
@@ -140,7 +140,7 @@ function reset() {
     const xhr = new XMLHttpRequest();
 
     // Set the request method and URL
-    xhr.open('POST', 'neverland-rank.vercel.app/update/done', true);
+    xhr.open('POST', 'http://localhost:3000/update/done', true);
 
     // Set the request header
     xhr.setRequestHeader('Content-Type', 'application/json');
