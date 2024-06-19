@@ -1,4 +1,3 @@
-const port = 5000;
 
 function update(element, sig) {
     const className = event.target.className;
@@ -83,9 +82,8 @@ function doneUpdate() {
 
     // Create a new XMLHttpRequest object
     const xhr = new XMLHttpRequest();
-    console.log('port in updates.js', port);
     // Set the request method and URL
-    xhr.open('POST', `http://localhost:${port}/update/done`, true);
+    xhr.open('POST', `http://localhost:5000/update/done`, true);
 
     // Set the request header
     xhr.setRequestHeader('Content-Type', 'application/json');
@@ -141,7 +139,7 @@ function reset() {
     const xhr = new XMLHttpRequest();
 
     // Set the request method and URL
-    xhr.open('POST', `http://localhost:${port}/update/done`, true);
+    xhr.open('POST', `http://localhost:5000/update/done`, true);
 
     // Set the request header
     xhr.setRequestHeader('Content-Type', 'application/json');
