@@ -78,7 +78,6 @@ exports.deleteMember = async (req, res) => {
     try {
         const gender = req.body.id;
         const memberName = req.body.name;
-        console.log(req.body)
         if (gender == 'females') {
             const female = await Female.updateOne({ Name: memberName }, { isDeleted: true });
             if (female) {

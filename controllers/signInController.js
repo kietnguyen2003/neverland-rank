@@ -1,7 +1,7 @@
 const Male = require('../models/Male')
 const Female = require('../models/Female')
 const User = require('../models/User')
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 exports.signIn = async (req, res) => {
     try {
@@ -9,7 +9,6 @@ exports.signIn = async (req, res) => {
         const isTaken = await User.findOne({
             "UserName": user.UserName
         });
-        console.log(isTaken)
         if (!isTaken) {
             res.redirect('/');
         }
@@ -35,7 +34,6 @@ exports.signIn = async (req, res) => {
 exports.createUser = async (req, res) => {
     try {
         const user = req.body;
-        console.log(user);
 
         const isTaken = await User.findOne({
             "UserName": user.UserName

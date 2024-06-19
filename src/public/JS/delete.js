@@ -3,7 +3,6 @@ function deleteMemberHandle(a) {
     if (check) {
         const row = $(a).closest('tr');
         const memberName = row.find('.name').text();
-        console.log(memberName)
 
         const xhr = new XMLHttpRequest();
 
@@ -12,7 +11,6 @@ function deleteMemberHandle(a) {
             name: memberName
         }
 
-        console.log(requestData)
 
         const jsonData = JSON.stringify(requestData);
 
