@@ -17,6 +17,8 @@ const memberRouter = require('../routers/memberRouters.js');
 const updateRouter = require('../routers/updateRouters.js');
 const moveRouter = require('../routers/moveRouters.js');
 
+console.log('port in server.js', port);
+
 app.use('/', moveRouter)
 app.use('/login', signInRouter);
 app.use('/member', memberRouter);

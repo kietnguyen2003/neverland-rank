@@ -1,3 +1,5 @@
+const port = 5000;
+
 function deleteMemberHandle(a) {
     const check = confirm("Are you sure you want to delete this member?");
     if (check) {
@@ -13,9 +15,9 @@ function deleteMemberHandle(a) {
 
 
         const jsonData = JSON.stringify(requestData);
-
+        console.log('port in delete.js', port);
         // Set the request method and URL
-        xhr.open('POST', 'http://localhost:3000/update/delete', true);
+        xhr.open('POST', `http://localhost:${port}/update/delete`, true);
 
         // Set the request header
         xhr.setRequestHeader('Content-Type', 'application/json');
